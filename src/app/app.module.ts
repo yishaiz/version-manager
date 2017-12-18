@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import { appRoutes } from './app.routes';
 import { RouterModule } from '@angular/router';
 import { VersionModule } from './version/version.module';
+import { ErrorsService } from "./Shared/errors/errors.service";
 
 @NgModule({
   declarations : [
@@ -23,6 +24,8 @@ import { VersionModule } from './version/version.module';
     VersionModule
   ],
   providers : [
+    ErrorsService
+
   ],
   bootstrap : [
     AppComponent
