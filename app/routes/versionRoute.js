@@ -5,15 +5,18 @@ const router = express.Router()
 const versionController = require('../controller/versionController')
 
 
-router.post('/next-version', async (req, res, next) => {
+// router.post('/next-version', async (req, res, next) => {
+router.get('/next-version', async (req, res, next) => {
 
   try {
+    const appName='xxx'//todo from client
+
     const nextVersion = await versionController.getNextVersion(appName)
 
     console.log('nextVersion ', nextVersion)
 
 
-    res.send(nextVersion)
+    res.send({ nextVersion })
   }
   catch (error) {
     console.log('error', error)
