@@ -32,6 +32,7 @@ const getMaxVersionFromDb = async (appName) => {
 
 
 module.exports = {
-  getNextVersion
+  getNextVersion,
+  getLatestVersion,
 };
 
