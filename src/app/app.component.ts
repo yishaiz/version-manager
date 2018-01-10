@@ -6,7 +6,10 @@ import { ErrorInfo } from './Shared/error-info';
   selector : 'app-root',
   template : `
     <div style="text-align:center">
-     
+      <mat-toolbar color="primary">
+        <span>Version Manager</span>
+      </mat-toolbar>
+
       <router-outlet></router-outlet>
     </div>
   `,

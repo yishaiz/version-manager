@@ -8,6 +8,7 @@ import { appRoutes } from './app.routes';
 import { RouterModule } from '@angular/router';
 import { VersionModule } from './version/version.module';
 import { ErrorsService } from "./Shared/errors/errors.service";
+import { MatListModule, MatToolbarModule } from "@angular/material";
 
 @NgModule({
   declarations : [
@@ -16,6 +17,10 @@ import { ErrorsService } from "./Shared/errors/errors.service";
   imports : [
     BrowserModule,
     CommonModule,
+
+    MatListModule,
+    MatToolbarModule,
+
     // HttpModule,
     // routing
     RouterModule.forRoot(appRoutes, {

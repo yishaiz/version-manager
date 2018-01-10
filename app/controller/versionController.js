@@ -26,13 +26,14 @@ const getNextVersionFromDb = async (appName) => {
 
 const getMaxVersionFromDb = async (appName) => {
   // const temp = await 'aaa'
-  const maxValue = Math.max.apply(null, versions)
+  // const maxValue = Math.max.apply(null, versions)
+  const maxValue = versions.reduce((a, b) => Math.max(a, b))
   return maxValue
 }
 
 
 module.exports = {
   getNextVersion,
-  getLatestVersion,
+  getLatestVersion : getMaxVersion ,
 };
 
