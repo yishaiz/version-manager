@@ -8,7 +8,7 @@ import { appRoutes } from './app.routes';
 import { RouterModule } from '@angular/router';
 import { VersionModule } from './version/version.module';
 import { ErrorsService } from "./Shared/errors/errors.service";
-import { MatListModule, MatToolbarModule } from "@angular/material";
+import {   MatToolbarModule } from "@angular/material";
 
 @NgModule({
   declarations : [
@@ -18,7 +18,7 @@ import { MatListModule, MatToolbarModule } from "@angular/material";
     BrowserModule,
     CommonModule,
 
-    MatListModule,
+    // MatListModule,
     MatToolbarModule,
 
     // HttpModule,

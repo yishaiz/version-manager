@@ -9,16 +9,31 @@ import { VersionService } from "../version.service";
 })
 export class ApplicationsComponent implements OnInit {
 
-  constructor (private versionService : VersionService, private router : Router) {
+  applications = []
+
+  constructor (private versionService : VersionService,
+    private router : Router) {
 
   }
 
   ngOnInit () {
     // this.getApplicaitons();
+
+    this.addApplications();
+  }
+
+  addApplications () {
+    this.applications.push({ 'name' : 'workers' });
+    this.applications.push({ 'name' : 'orders' });
+    this.applications.push({ 'name' : 'marketing' });
   }
 
   navigateToApplicationPage () {
     this.router.navigate([ 'xxx' ]);
+  }
+
+  displayApp (app) {
+    console.log(app)
   }
 
 }

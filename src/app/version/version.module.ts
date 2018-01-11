@@ -5,24 +5,28 @@ import { RouterModule } from '@angular/router';
 import { DataTableModule } from 'angular2-datatable';
 import { HttpClientModule } from '@angular/common/http';
 import { ApplicationsComponent } from './applications/applications.component';
+import { MatListModule } from "@angular/material";
 
 
 @NgModule({
-  imports: [
+  imports : [
     CommonModule,
+    MatListModule,
+
     HttpClientModule,
     DataTableModule,
     RouterModule.forChild([
-        {
-          path : '', component : ApplicationsComponent,
-          children : [
-            // { path : ':id', component : UsersComponent }
-          ]
-        }
-  ])
+      {
+        path : '', component : ApplicationsComponent,
+        children : [
+          // { path : ':id', component : UsersComponent }
+        ]
+      }
+    ])
   ],
-  declarations: [ApplicationsComponent],
-  providers: [VersionService]
+  declarations : [ ApplicationsComponent ],
+  providers : [ VersionService ]
 })
-export class VersionModule { }
+export class VersionModule {
+}
 
