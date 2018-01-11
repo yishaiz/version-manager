@@ -9,7 +9,7 @@ import { VersionService } from "../version.service";
 })
 export class ApplicationsComponent implements OnInit {
 
-  applications = []
+  applications = [];
 
   constructor (private versionService : VersionService,
     private router : Router) {
@@ -28,12 +28,15 @@ export class ApplicationsComponent implements OnInit {
     this.applications.push({ 'name' : 'marketing' });
   }
 
-  navigateToApplicationPage () {
-    this.router.navigate([ 'xxx' ]);
+  navigateToApplicationPage (appName) {
+    // this.router.navigate([  appName  ]);
+    this.router.navigate([ `/version/app/${appName}` ]);
   }
 
   displayApp (app) {
-    console.log(app)
+    console.log(app);
+
+    this.navigateToApplicationPage(app.name);
   }
 
 }

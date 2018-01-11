@@ -6,7 +6,7 @@ import { DataTableModule } from 'angular2-datatable';
 import { HttpClientModule } from '@angular/common/http';
 import { ApplicationsComponent } from './applications/applications.component';
 import { MatListModule } from "@angular/material";
-
+import { ApplicationComponent } from './application/application.component';
 
 @NgModule({
   imports : [
@@ -19,13 +19,21 @@ import { MatListModule } from "@angular/material";
       {
         path : '', component : ApplicationsComponent,
         children : [
-          // { path : ':id', component : UsersComponent }
+          // { path : 'app/:name', component : ApplicationComponent }
         ]
-      }
+      },
+      {
+         path : 'app/:name', component : ApplicationComponent
+       }
     ])
   ],
-  declarations : [ ApplicationsComponent ],
-  providers : [ VersionService ]
+  declarations : [
+    ApplicationsComponent,
+    ApplicationComponent
+  ],
+  providers : [
+    VersionService
+  ]
 })
 export class VersionModule {
 }

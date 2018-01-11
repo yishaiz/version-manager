@@ -1,6 +1,7 @@
 <mat-list>
   <mat-list-item *ngFor="let app of applications">
-    <h3 mat-tab-link="" (click)="displayApp(app)">
+
+    <h3 mat-tab-link  (click)="displayApp(app)">
       {{app.name}}
     </h3>
   </mat-list-item>
