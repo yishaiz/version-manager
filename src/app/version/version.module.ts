@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ApplicationsComponent } from './applications/applications.component';
 import { MatListModule, MatTab, MatTableModule, MatToolbarModule } from "@angular/material";
 import { ApplicationComponent } from './application/application.component';
+import { SortedTableComponent } from './sorted-table/sorted-table.component';
 
 @NgModule({
   imports : [
@@ -24,13 +25,15 @@ import { ApplicationComponent } from './application/application.component';
         ]
       },
       {
-        path : 'app/:name', component : ApplicationComponent
+        path : 'app/:name', component : SortedTableComponent
+        // path : 'app/:name', component : ApplicationComponent
       }
     ])
   ],
   declarations : [
     ApplicationsComponent,
-    ApplicationComponent
+    ApplicationComponent,
+    SortedTableComponent
   ],
   providers : [
     VersionService
