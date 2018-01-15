@@ -5,14 +5,15 @@ import { RouterModule } from '@angular/router';
 import { DataTableModule } from 'angular2-datatable';
 import { HttpClientModule } from '@angular/common/http';
 import { ApplicationsComponent } from './applications/applications.component';
-import { MatListModule, MatToolbarModule } from "@angular/material";
+import { MatListModule, MatTab, MatTableModule, MatToolbarModule } from "@angular/material";
 import { ApplicationComponent } from './application/application.component';
 
 @NgModule({
   imports : [
     CommonModule,
     MatListModule,
-MatToolbarModule,
+    MatToolbarModule,
+    MatTableModule,
     HttpClientModule,
     DataTableModule,
     RouterModule.forChild([
@@ -23,8 +24,8 @@ MatToolbarModule,
         ]
       },
       {
-         path : 'app/:name', component : ApplicationComponent
-       }
+        path : 'app/:name', component : ApplicationComponent
+      }
     ])
   ],
   declarations : [

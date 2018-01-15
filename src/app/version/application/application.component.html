@@ -1,3 +1,50 @@
-<mat-toolbar md-scroll-shrink>
-  <div class="md-toolbar-tools">{{appName}}</div>
-</mat-toolbar>
+<div>
+  <mat-toolbar md-scroll-shrink>
+    <div class="md-toolbar-tools">{{appName}}</div>
+  </mat-toolbar>
+
+
+  <div class="example-container mat-elevation-z8">
+    <mat-table #table [dataSource]="dataSource" matSort>
+
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> id</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.id}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="createDate">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> date</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.createDate}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="details">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> details</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.details}}</mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
+
+</div>
+
+
+
+
+  <!--<table matSort (matSortChange)="sortData($event)">-->
+  <!--<tr>
+    <th mat-sort-header="id">id</th>
+    <th mat-sort-header="createDate">date</th>
+    <th mat-sort-header="details">details</th>
+  </tr>
+
+  <tr *ngFor="let version of appVersions">
+    <td>{{version.id}}</td>
+    <td>{{version.createDate}}</td>
+    <td>{{version.details}}</td>
+  </tr>
+  </table>
+  -->
+
+<!-- Position Column -->
