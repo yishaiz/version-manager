@@ -5,6 +5,56 @@ const router = express.Router()
 const versionController = require('../controller/versionController')
 
 
+router.get('/:app/next-version', async (req, res, next) => {
+  try {
+    const appName = req.params.app.toString()
+
+    const nextVersion = await versionController.getNextVersion(appName)
+
+    console.log('nextVersion ', nextVersion)
+
+    res.send({ nextVersion })
+  }
+  catch (error) {
+    console.log('error', error)
+
+    res
+      .status(400)
+      .send({
+        error : error,
+        message : error.toString()
+      })
+  }
+})
+
+
+router.get('/:app/latest-version', async (req, res, next) => {
+  try {
+    const appName = req.params.app.toString()
+
+    const nextVersion = await versionController.getLatestVersion(appName)
+
+    console.log('nextVersion ', nextVersion)
+
+    res.send({ nextVersion })
+  }
+  catch (error) {
+    console.log('error', error)
+
+    res
+      .status(400)
+      .send({
+        error : error,
+        message : error.toString()
+      })
+  }
+})
+
+
+
+
+
+
 // router.get('/next-version', async (req, res, next) => {
 router.post('/next-version', async (req, res, next) => {
 
