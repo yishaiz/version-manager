@@ -9,6 +9,7 @@ import { MatListModule, MatTab, MatTableModule, MatToolbarModule } from "@angula
 import { ApplicationComponent } from './application/application.component';
 import { SortedTableComponent } from './sorted-table/sorted-table.component';
 import { MaterialTableComponent } from './material-table/material-table.component';
+import { FormatDatePipe } from './format-date.pipe';
 // import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 // import { MomentModule } from 'angular2-moment/moment.module';
 
@@ -40,7 +41,8 @@ import { MaterialTableComponent } from './material-table/material-table.componen
     ApplicationsComponent,
     ApplicationComponent,
     SortedTableComponent,
-    MaterialTableComponent
+    MaterialTableComponent,
+    FormatDatePipe
   ],
   providers : [
     VersionService

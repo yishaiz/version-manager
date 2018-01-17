@@ -13,8 +13,7 @@ export class ApplicationsComponent implements OnInit {
 
   constructor (private versionService : VersionService,
     private router : Router) {
-
-  }
+ }
 
   ngOnInit () {
     // this.getApplicaitons();
@@ -29,8 +28,7 @@ export class ApplicationsComponent implements OnInit {
   }
 
   navigateToApplicationPage (appName) {
-    // this.router.navigate([  appName  ]);
-    this.router.navigate([ `/version/app/${appName}` ]);
+     this.router.navigate([ `/version/app/${appName}` ]);
   }
 
   displayApp (app) {
