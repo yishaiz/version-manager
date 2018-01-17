@@ -1,5 +1,6 @@
 import {Component, ViewChild} from '@angular/core';
 import {MatTableDataSource, MatSort} from '@angular/material';
+import {MatSortModule} from '@angular/material/sort';
 
 @Component({
   selector: 'app-sorted-table',

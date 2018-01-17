@@ -8,6 +8,9 @@ import { ApplicationsComponent } from './applications/applications.component';
 import { MatListModule, MatTab, MatTableModule, MatToolbarModule } from "@angular/material";
 import { ApplicationComponent } from './application/application.component';
 import { SortedTableComponent } from './sorted-table/sorted-table.component';
+import { MaterialTableComponent } from './material-table/material-table.component';
+// import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+// import { MomentModule } from 'angular2-moment/moment.module';
 
 @NgModule({
   imports : [
@@ -17,6 +20,8 @@ import { SortedTableComponent } from './sorted-table/sorted-table.component';
     MatTableModule,
     HttpClientModule,
     DataTableModule,
+   // MomentModule  ,
+    // BrowserAnimationsModule,
     RouterModule.forChild([
       {
         path : '', component : ApplicationsComponent,
@@ -25,15 +30,17 @@ import { SortedTableComponent } from './sorted-table/sorted-table.component';
         ]
       },
       {
-        path : 'app/:name', component : SortedTableComponent
-        // path : 'app/:name', component : ApplicationComponent
+        // path : 'app/:name', component : MaterialTableComponent
+        // path : 'app/:name', component : SortedTableComponent
+        path : 'app/:name', component : ApplicationComponent
       }
     ])
   ],
   declarations : [
     ApplicationsComponent,
     ApplicationComponent,
-    SortedTableComponent
+    SortedTableComponent,
+    MaterialTableComponent
   ],
   providers : [
     VersionService

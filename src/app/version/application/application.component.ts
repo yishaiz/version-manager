@@ -2,7 +2,10 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Subscription } from "rxjs/Subscription";
 import { ActivatedRoute, Router } from "@angular/router";
 import { MatSort, MatTableDataSource } from "@angular/material";
-import moment = require("moment");
+import {} from 'moment/moment' ;
+// const moment = require('moment/moment');
+// import { MomentModule } from 'angular2-moment/moment.module';
+import * as moment from 'moment';
 
 @Component({
   selector : 'app-application',
@@ -41,24 +44,9 @@ export class ApplicationComponent implements OnInit {
   }
 
   convertDate (date) {
-    return moment(date)
-      .format('YYYY-MM-DD hh:mm:ss');
+    return moment(date).format('YYYY-MM-DD hh:mm:ss');
   }
 
-
-  /*
-
-  convertDate (date) {
-    const year = date.getFullYear().toString();
-    const month   = (date.getMonth() + 1).toString();
-    const day   = date.getDate().toString();
-
-    const mmChars = month.split('');
-    const ddChars = day.split('');
-
-    return year + '-' + (mmChars[ 1 ] ? month : "0" + mmChars[ 0 ]) + '-' + (ddChars[ 1 ] ? day : "0" + ddChars[ 0 ]);
-  }
-*/
 
   ngOnInit () {
     this.routeSubscriber = this.route.params.subscribe(
@@ -79,3 +67,18 @@ export class ApplicationComponent implements OnInit {
   }
 
 }
+
+
+/*
+
+convertDate (date) {
+  const year = date.getFullYear().toString();
+  const month   = (date.getMonth() + 1).toString();
+  const day   = date.getDate().toString();
+
+  const mmChars = month.split('');
+  const ddChars = day.split('');
+
+  return year + '-' + (mmChars[ 1 ] ? month : "0" + mmChars[ 0 ]) + '-' + (ddChars[ 1 ] ? day : "0" + ddChars[ 0 ]);
+}
+*/
