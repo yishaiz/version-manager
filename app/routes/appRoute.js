@@ -4,16 +4,14 @@ const router = express.Router()
 
 const appController = require('../controller/appController')
 
-
-router.post('/applications-list', async (req, res, next) => {
+router.post('/app-list', async (req, res, next) => {
 
   try {
     const applications = await appController.getApplicationsList()
 
     console.log('applications  ', applications)
 
-
-    res.send({ applications })
+    res.send(applications)
   }
   catch (error) {
     console.log('error', error)

@@ -1,7 +1,7 @@
 const config = require('../../app.config')
 const express = require('express')
 
-const applicationsList = [ 'FE', 'BO', 'CasapAdmin' ]
+const applicationsList = [ 'FE', 'BO', 'Admin', 'Orders' ]
 
 const getApplicationsList = async () => {
   const nextVersion = await getApplicationsListFromDb()

@@ -5,7 +5,6 @@ const cookieParser = require('cookie-parser')
 
 const app = express()
 
-const appRoute = require('./app/routes/appRoute')
 const versionRoute = require('./app/routes/versionRoute')
 
 app.use(express.static('dist'))
@@ -13,7 +12,6 @@ app.use(bodyParser.json())
 
 app.use(morgan('dev'))
 
-app.use('/application', appRoute)
 app.use('/version', versionRoute)
 
 const port = process.env.PORT || 5000
